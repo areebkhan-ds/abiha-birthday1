@@ -201,7 +201,7 @@ var PASSCODE="1128";              // your 4-digit passcode
    Inside that folder, keep a "photos" folder and your music file.
    The helper also converts Windows backslashes to web-safe forward slashes.
 */
-var MUSIC_SRC="abiha_website_v2/leberch-romantic-584475.mp3";
+var MUSIC_SRC="music/leberch-romantic-584475.mp3";
 var PORTRAIT_SRC=""; // Optional: "abiha_website_v2/photos/portrait.jpg"
 
 /* Exact photo filenames. Change these if your actual filenames differ. */
@@ -233,7 +233,7 @@ function makeAssetPath(path){
     .join("/");
 }
 var PHOTO_SRC=PHOTO_FILES.map(function(file){
-  return makeAssetPath("abiha_website_v2/photos/" + file);
+  return makeAssetPath("static/photos/" + file);
 });
 MUSIC_SRC=makeAssetPath(MUSIC_SRC);
 if(PORTRAIT_SRC) PORTRAIT_SRC=makeAssetPath(PORTRAIT_SRC);
