@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Abiha ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:wght@600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff2e6;--ink:#4b2a1b;--soft:#8a5a45;--pink:#f3a0b6;--pink2:#ffc9d6;--peach:#ffd8bd;--cream:#fffaf0;--sh:rgba(110,50,30,.25);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}html,body{margin:0}
+body{background:var(--bg);background-image:radial-gradient(circle at 12% 8%,var(--pink2) 0 2px,transparent 3px),radial-gradient(circle at 80% 30%,var(--peach) 0 2px,transparent 3px),repeating-linear-gradient(0deg,rgba(138,90,69,.035) 0 1px,transparent 1px 7px);background-size:90px 90px,120px 120px,auto;color:var(--ink);font-family:"Caveat","Segoe Print","Bradley Hand",cursive;font-size:1.25rem}
+body.lock{overflow:hidden}
+h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:.03em;line-height:1.2;margin:0}
+.cta{all:unset;cursor:pointer;display:inline-block;margin-top:18px;padding:14px 28px;border-radius:99px;background:linear-gradient(135deg,#ffc2d1,#f3849f);color:var(--ink);font:700 1.5rem "Caveat",cursive;box-shadow:0 6px 16px var(--sh);transition:transform .15s}
+.cta:hover{transform:scale(1.05)}.cta:active{transform:scale(.96)}
+button:focus-visible,input:focus-visible,.tile:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.bw{width:64px;height:40px}.cat{width:84px;height:75px}
+/* screens */
+.screen{position:fixed;inset:0;z-index:40;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 20px 90px;overflow:auto;background:radial-gradient(circle at 20% 15%,var(--pink2),transparent 45%),radial-gradient(circle at 85% 85%,var(--peach),transparent 50%),var(--bg)}
+.screen.on{display:flex;animation:fade .5s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.big{font-size:clamp(1.3rem,5.6vw,2rem);max-width:560px}
+.msg{min-height:1.6rem;margin:6px 0 0;color:#b4436a;font-size:1.3rem}
+.hint{margin:14px 0 0;color:var(--soft);font-size:1.25rem}
+.st{position:absolute}.st.a{left:6%;top:9%;transform:rotate(-12deg)}.st.b{right:6%;bottom:14%;transform:rotate(10deg)}
+#lockico{animation:bob 2.4s ease-in-out infinite;margin-bottom:10px}
+#shackle{transition:transform .5s;transform-origin:70px 50px}
+#lockico.open #shackle{transform:translateY(-14px) rotate(-22deg)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.pin{display:flex;gap:10px;margin:22px 0 4px}
+.pin input{width:56px;height:68px;border:3px solid var(--pink);border-radius:16px;background:var(--cream);color:var(--ink);font:600 2rem "Fraunces",serif;text-align:center;box-shadow:0 4px 10px var(--sh)}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+/* gift */
+.gb{position:relative;width:160px;height:170px;margin:16px auto 10px;animation:wig 1.5s ease-in-out infinite}
+@keyframes wig{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg) translateY(-6px)}}
+.gb .box{position:absolute;bottom:0;left:12px;right:12px;height:100px;background:linear-gradient(#f7a7bd,#e88aa6);border-radius:8px;box-shadow:0 10px 20px var(--sh)}
+.gb .box:after,.gb .lid:after{content:"";position:absolute;top:0;bottom:0;left:50%;width:26px;margin-left:-13px;background:var(--cream)}
+.gb .lid{position:absolute;bottom:92px;left:0;right:0;height:36px;background:#fbbccd;border-radius:8px;z-index:2;transition:transform .8s cubic-bezier(.3,1.5,.5,1),opacity .8s}
+.gb .bw{position:absolute;bottom:122px;left:50%;margin-left:-40px;width:80px;height:50px;z-index:3;transition:transform .8s,opacity .8s}
+.gb.open{animation:none}.gb.open .lid,.gb.open .bw{transform:translateY(-130px) rotate(-24deg);opacity:0}
+/* portrait */
+.pw{position:relative;margin:34px 0 20px;animation:bnc 1.3s ease-in-out infinite}
+@keyframes bnc{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.pf{width:min(64vw,270px);aspect-ratio:1;border-radius:50%;border:8px solid var(--cream);outline:4px dashed var(--pink);outline-offset:6px;overflow:hidden;box-shadow:0 14px 30px var(--sh);background:var(--peach)}
+.pf img{width:100%;height:100%;object-fit:cover;display:block}
+.pw .bw{position:absolute;top:-30px;left:50%;margin-left:-45px;width:90px;height:56px;z-index:2;filter:drop-shadow(0 3px 3px var(--sh))}
+/* site */
+#site{position:relative;z-index:1;padding-bottom:120px}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 20px;position:relative}
+.hero h1{font-size:clamp(1.8rem,8vw,3.2rem);max-width:760px}
+.hero p{max-width:480px;font-size:1.5rem;margin:14px 0 0;color:var(--soft)}
+.cake{width:200px;margin-bottom:10px}.fl1{animation:flick .35s infinite alternate;transform-origin:center bottom;transform-box:fill-box}
+@keyframes flick{to{transform:scale(.8,1.15) rotate(5deg)}}
+.sec{max-width:980px;margin:0 auto;padding:56px 18px;text-align:center}
+.t{font-size:clamp(1.5rem,6vw,2.3rem);margin-bottom:26px}
+.pol{background:linear-gradient(160deg,var(--cream),var(--peach));padding:14px 14px 0;border-radius:6px;box-shadow:0 14px 34px var(--sh);position:relative}
+.pol img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:var(--peach)}
+.pc{min-height:3.6rem;display:flex;align-items:center;justify-content:center;padding:6px 8px;font-weight:700;font-size:1.55rem;line-height:1.1}
+.tp{position:absolute;top:-10px;left:50%;width:70px;height:22px;margin-left:-35px;background:rgba(243,160,182,.75);transform:rotate(-4deg);box-shadow:0 2px 4px rgba(0,0,0,.12)}
+.ss{display:flex;align-items:center;justify-content:center;gap:8px}
+.ss .pol{width:min(66vw,340px)}.pb{all:unset;cursor:pointer;display:block}
+.arr{all:unset;cursor:pointer;flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--cream);box-shadow:0 4px 12px var(--sh);font-size:1.8rem}
+.arr:active{transform:scale(.9)}
+#dots{display:flex;gap:10px;justify-content:center;margin-top:20px}
+.dot{all:unset;cursor:pointer;width:12px;height:12px;border-radius:50%;background:var(--pink2);transition:.3s}.dot.on{background:#e0527d;transform:scale(1.4)}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px;grid-auto-flow:dense}
+@media(min-width:640px){.gal{grid-template-columns:repeat(3,1fr)}}@media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr)}}
+.tile{all:unset;cursor:pointer;display:block;position:relative;background:var(--cream);padding:8px 8px 4px;border-radius:4px;box-shadow:0 6px 16px var(--sh);transform:rotate(var(--r,0deg));transition:transform .25s}
+.tile.w{grid-column:span 2}.tile img{display:block;width:100%;object-fit:cover;border-radius:2px}
+.tile .c{display:block;padding:6px 4px 4px;font-weight:700;font-size:1.2rem;line-height:1.05}
+.tile.in:hover,.tile.in:focus-visible{transform:rotate(0) scale(1.04)}
+.stk{position:absolute;top:-12px;right:-6px;font-size:1.5rem;font-style:normal}
+.rv{opacity:0}.rv.in{opacity:1;animation:pop .7s var(--d,0s) backwards}
+@keyframes pop{from{opacity:0;transform:translateY(34px) scale(.9) rotate(var(--r,0deg))}}
+.notes{display:grid;gap:22px;text-align:left}@media(min-width:700px){.notes{grid-template-columns:1fr 1fr}}
+.note{position:relative;padding:26px 22px 20px;border-radius:22px;box-shadow:0 8px 20px var(--sh);transform:rotate(var(--r,0deg))}
+.note h3{margin:0 0 6px;font-size:1.9rem;line-height:1}.note p{margin:0;font-size:1.4rem;line-height:1.25;white-space:pre-line}
+.note .e{position:absolute;top:-14px;right:14px;font-size:1.9rem}
+.poems{display:grid;gap:22px}@media(min-width:760px){.poems{grid-template-columns:repeat(3,1fr)}}
+.poem{background:var(--cream) repeating-linear-gradient(transparent 0 33px,rgba(243,160,182,.35) 33px 34px);padding:24px 18px;border-radius:6px;box-shadow:0 10px 24px var(--sh);animation:flo 5s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+@keyframes flo{to{transform:translateY(-9px) rotate(.6deg)}}
+.poem h3{margin:0 0 10px;font-size:1.6rem}.poem p{margin:0;font-size:1.5rem;line-height:34px;white-space:pre-line}
+.poem[lang=ur] p{font:1.35rem/2.4 "Noto Nastaliq Urdu","Segoe UI",serif;white-space:pre-line}
+.poetry{background:linear-gradient(180deg,transparent,rgba(255,201,214,.6) 12%,rgba(255,216,189,.6) 88%,transparent);margin:30px 0}
+#warn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:8px;right:8px;z-index:80;display:none;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;background:var(--cream);border:2px solid #e0527d;border-radius:16px;padding:10px 14px;box-shadow:0 8px 20px var(--sh);font-size:1.2rem;line-height:1.1}#warn.on{display:flex}#warn button{all:unset;cursor:pointer;background:var(--pink);padding:6px 14px;border-radius:99px;font-weight:700}
+.psub{margin:-14px 0 28px;font-size:1.5rem;color:var(--soft)}
+.pset{margin-bottom:48px}.ptitle{font-weight:700;font-size:2rem;margin-bottom:16px}
+.envw{perspective:900px}
+.env{all:unset;cursor:pointer;display:block;position:relative;width:min(86vw,340px);height:220px;margin:0 auto}
+.env .bk{position:absolute;inset:0;background:#f3a0b6;border-radius:10px;box-shadow:0 12px 26px var(--sh)}
+.env .fr{position:absolute;inset:0;border-radius:10px;background:#ffc9d6;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:2}
+.env .fp{position:absolute;left:0;right:0;top:0;height:60%;background:#f7b3c5;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s,z-index 0s .35s;z-index:3}
+.env.open .fp{transform:rotateX(180deg);z-index:0}
+.seal{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-30px 0 0 -27px;border-radius:50%;background:radial-gradient(#ff7aa2,#d94874);color:#fff;display:grid;place-items:center;font-size:1.7rem;z-index:4;box-shadow:0 4px 10px var(--sh);animation:beat 1.4s infinite;transition:opacity .3s}
+@keyframes beat{50%{transform:scale(1.12)}}.env.open .seal{opacity:0;animation:none}
+.lt{max-height:0;overflow:hidden;opacity:0;transform:scaleY(.15);transform-origin:top;transition:max-height 1.4s ease,transform 1.1s ease,opacity .6s;margin:0 auto;width:min(92vw,520px)}
+.lt.show{max-height:2000px;opacity:1;transform:none;margin-top:26px}
+.paper{background:var(--cream) repeating-linear-gradient(transparent 0 31px,rgba(243,160,182,.4) 31px 32px);padding:26px 22px;border-radius:6px;box-shadow:0 12px 28px var(--sh);text-align:left;font-size:1.5rem;line-height:32px;white-space:pre-line}
+.fin{padding:70px 20px 40px;text-align:center}.fin h2{font-size:clamp(1.3rem,5.4vw,2rem);max-width:640px;margin:0 auto}
+/* music */
+#pl{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);transform:translateX(-50%);z-index:47;display:flex;align-items:center;gap:10px;background:var(--cream);border:2px solid var(--pink);border-radius:99px;padding:6px 16px 6px 6px;box-shadow:0 6px 18px var(--sh);white-space:nowrap}
+#pp{all:unset;cursor:pointer;width:44px;height:44px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-size:1.2rem}
+#pl small{font-size:1.1rem;color:var(--soft);text-decoration:underline;cursor:pointer}
+.eq{display:flex;gap:3px;align-items:flex-end;height:18px}.eq i{width:4px;height:5px;background:#e0527d;border-radius:2px}
+#pl.playing .eq i{animation:eq .8s ease-in-out infinite alternate}#pl.playing .eq i:nth-child(2){animation-delay:.2s}#pl.playing .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{to{height:18px}}
+#bg{position:fixed;inset:0;z-index:45;pointer-events:none;overflow:hidden}
+#cf{position:fixed;inset:0;z-index:70;pointer-events:none}
+.fl{position:absolute;bottom:-30px;pointer-events:none;animation:up linear forwards;z-index:1}
+@keyframes up{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:.8}100%{transform:translateY(-110vh) translateX(var(--dx)) scale(1.1) rotate(var(--rot));opacity:0}}
+.sp{position:absolute;pointer-events:none;color:#ffd98a;animation:tw 1.8s ease-in-out forwards;z-index:1}
+@keyframes tw{0%{transform:scale(0) rotate(0);opacity:0}50%{transform:scale(1) rotate(90deg);opacity:1}100%{transform:scale(0) rotate(180deg);opacity:0}}
+/* viewer */
+#viewer{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:rgba(40,16,10,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overscroll-behavior:contain;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+#viewer.on{display:flex;animation:fade .3s}
+.stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:calc(env(safe-area-inset-top,0px) + 56px) 0 calc(env(safe-area-inset-bottom,0px) + 14px)}
+.vc{position:relative;margin:0;width:min(84vw,430px,calc((100dvh - 250px) * .8));background:linear-gradient(160deg,var(--cream),var(--peach));padding:clamp(10px,3vmin,18px) clamp(10px,3vmin,18px) 0;border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.5);touch-action:pan-y}
+.vc img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:var(--peach)}
+.vc .pc{font-size:clamp(1.35rem,5.4vw,1.75rem);min-height:4.1rem}
+.vc .tp.l{left:-6px;transform:rotate(-38deg)}.vc .tp.r{left:auto;right:-6px;margin:0;transform:rotate(38deg)}
+.vc .bw{position:absolute;left:50%;top:-28px;margin-left:-32px;filter:drop-shadow(0 3px 3px rgba(0,0,0,.25))}
+.dec{position:absolute;bottom:6px;font-size:1.3rem}.dec.l{left:10px}.dec.r{right:10px}
+#cnt{margin-top:16px;color:#ffe3d6;font-size:1.6rem;letter-spacing:.12em}
+.vb{all:unset;cursor:pointer;position:absolute;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:rgba(255,250,240,.92);color:var(--ink);font-size:1.7rem;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:3}
+.vb:active{transform:scale(.9)}
+#vp{left:max(10px,env(safe-area-inset-left,0px));top:50%;margin-top:-24px}#vn{right:max(10px,env(safe-area-inset-right,0px));top:50%;margin-top:-24px}
+#vx{right:max(12px,env(safe-area-inset-right,0px));top:calc(env(safe-area-inset-top,0px) + 10px);background:var(--pink)}
+@media(max-width:560px){#vp,#vn{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);margin:0;width:44px;height:44px}#vp{left:calc(50% - 130px)}#vn{right:calc(50% - 130px)}}
+#toast{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 70px);left:50%;transform:translateX(-50%);background:var(--pink);color:var(--ink);padding:6px 16px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .3s;white-space:nowrap}
+#toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.fl,.sp{display:none}}
+</style>
+</head>
+<body class="lock">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="bow" viewBox="0 0 64 40"><path d="M32 20 6 4Q-2 20 6 36Z" fill="#f3a0b6"/><path d="M32 20 58 4Q66 20 58 36Z" fill="#f3a0b6"/><path d="M32 20 10 9Q6 20 10 31Z" fill="#ffc9d6"/><path d="M32 20 54 9Q58 20 54 31Z" fill="#ffc9d6"/><circle cx="32" cy="20" r="6.5" fill="#e37a98"/></symbol>
+<symbol id="cat" viewBox="0 0 90 80"><path d="M14 30 12 6 36 20ZM76 30 78 6 54 20Z" fill="#fffaf0" stroke="#4b2a1b" stroke-width="3" stroke-linejoin="round"/><ellipse cx="45" cy="47" rx="36" ry="28" fill="#fffaf0" stroke="#4b2a1b" stroke-width="3"/><circle cx="31" cy="46" r="3.4" fill="#4b2a1b"/><circle cx="59" cy="46" r="3.4" fill="#4b2a1b"/><ellipse cx="45" cy="54" rx="4.5" ry="3" fill="#f3a0b6"/><path d="M39 60q6 5 12 0" fill="none" stroke="#4b2a1b" stroke-width="2.5" stroke-linecap="round"/><circle cx="22" cy="56" r="5" fill="#ffc9d6" opacity=".7"/><circle cx="68" cy="56" r="5" fill="#ffc9d6" opacity=".7"/><use href="#bow" x="50" y="0" width="34" height="21"/></symbol>
+</defs></svg>
+<div id="warn" role="alert"><span id="wt"></span><button id="wpick">Choose your photos</button><button id="wx" aria-label="Hide message">✕</button><input type="file" id="wf" accept="image/*" multiple hidden></div>
+<div id="bg"></div><canvas id="cf"></canvas>
+
+<section id="lock" class="screen on" aria-label="Passcode lock">
+<svg class="cat st a"><use href="#cat"/></svg><svg class="cat st b"><use href="#cat"/></svg>
+<svg id="lockico" viewBox="0 0 100 110" width="104" height="114" aria-hidden="true"><g id="shackle"><path d="M30 50V34a20 20 0 0 1 40 0v16" fill="none" stroke="#4b2a1b" stroke-width="9" stroke-linecap="round"/></g><rect x="14" y="48" width="72" height="54" rx="14" fill="#f3a0b6" stroke="#4b2a1b" stroke-width="3"/><path d="M50 88c-9-6-12-10-12-14a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 4-3 8-12 14z" fill="#fffaf0"/></svg>
+<h1 class="big">GUESS THE 4-DIGIT PASSCODE TO UNLOCK YOUR SURPRISE</h1>
+<div class="pin" id="pin"><input inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 1"><input inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 2"><input inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 3"><input inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 4"></div>
+<p class="msg" id="lmsg" aria-live="polite"></p>
+<button class="cta" id="unlock">UNLOCK YOUR SURPRISE ♡</button>
+<p class="hint">It’s a number only you might know</p>
+</section>
+
+<section id="gift" class="screen" aria-label="Gift">
+<h1 class="big">YAYYYY, YOU DID IT!</h1>
+<div class="gb" id="gb"><div class="box"></div><div class="lid"></div><svg class="bw"><use href="#bow"/></svg></div>
+<p style="font-size:1.6rem;margin:0">Your little birthday surprise is ready!</p>
+<button class="cta" id="openGift">OPEN YOUR GIFT</button>
+</section>
+
+<section id="portrait" class="screen" aria-label="Birthday portrait">
+<div class="pw"><svg class="bw"><use href="#bow"/></svg><div class="pf"><img id="pimg" alt="Cartoon-style portrait"></div></div>
+<h1 class="big">SURPRISEEEE ABIHAAAA! IT’S YOUR DAYYY! 🎀</h1>
+<button class="cta" id="celebrate">LET’S CELEBRATE ♡</button>
+</section>
+
+<main id="site" hidden>
+<section class="hero">
+<svg class="cake" viewBox="0 0 200 190" aria-hidden="true"><ellipse cx="100" cy="178" rx="92" ry="9" fill="#4b2a1b" opacity=".15"/><rect x="22" y="112" width="156" height="62" rx="12" fill="#f7a7bd"/><rect x="40" y="72" width="120" height="48" rx="12" fill="#ffd8bd"/><path d="M40 84q10 14 20 0t20 0 20 0 20 0 20 0 20 0v-12H40z" fill="#fffaf0"/><path d="M22 124q13 15 26 0t26 0 26 0 26 0 26 0 26 0v-12H22z" fill="#fffaf0"/><text x="100" y="156" font-size="26" text-anchor="middle" fill="#fffaf0">♥ ♥ ♥</text><rect x="76" y="44" width="9" height="30" rx="3" fill="#ffc9d6"/><rect x="96" y="44" width="9" height="30" rx="3" fill="#f3a0b6"/><rect x="116" y="44" width="9" height="30" rx="3" fill="#ffc9d6"/><ellipse class="fl1" cx="80.5" cy="36" rx="5" ry="9" fill="#ffcf70"/><ellipse class="fl1" cx="100.5" cy="36" rx="5" ry="9" fill="#ffcf70" style="animation-delay:.1s"/><ellipse class="fl1" cx="120.5" cy="36" rx="5" ry="9" fill="#ffcf70" style="animation-delay:.2s"/></svg>
+<h1 id="hh"></h1>
+<p>Today the world gets to celebrate you. And I get to remind you how wonderfully special you are.</p>
+<a class="cta" href="#slides">LET’S OPEN YOUR SCRAPBOOK</a>
+<a class="cta" href="#poetry" style="margin-top:10px">READ YOUR SHAYARI ♡</a>
+</section>
+<section class="sec" id="slides"><h2 class="t">A LITTLE MEMORY</h2>
+<div class="ss"><button class="arr" id="sp" aria-label="Previous slide">‹</button><figure class="pol" id="spol" style="margin:0"><i class="tp"></i><button class="pb" id="sopen" aria-label="Open this photo"><img id="simg" alt=""></button><figcaption class="pc" id="scap"></figcaption></figure><button class="arr" id="sn" aria-label="Next slide">›</button></div>
+<div id="dots"></div></section>
+<section class="sec"><h2 class="t">MEMORY SCRAPBOOK</h2><div class="gal" id="gal"></div></section>
+<section class="sec"><h2 class="t">LITTLE NOTES FOR YOU ♡</h2><div class="notes" id="notes"></div></section>
+<section class="poetry" id="poetry"><div class="sec"><h2 class="t">KUCH LAFZ SIRF APKY LIYE</h2><p class="psub">a little corner of poetry, just for you, read when you will free ♡</p><div id="poems"></div></div></section>
+<section class="sec"><h2 class="t">A LETTER FOR YOU 💌</h2>
+<div class="envw"><button class="env" id="env" aria-label="Open the letter"><span class="bk"></span><span class="fp"></span><span class="fr"></span><span class="seal">♥</span></button></div>
+<div class="lt" id="lt"><div class="paper" id="paper"></div></div></section>
+<section class="fin" id="fin"><svg class="cat"><use href="#cat"/></svg><h2 id="fh"></h2></section>
+</main>
+
+<div id="pl"><button id="pp" aria-label="Play music">▶</button><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><small id="pt">add your song</small><input type="file" id="pf2" accept="audio/*" hidden></div>
+
+<div id="viewer" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+<button class="vb" id="vx" aria-label="Close photo viewer">✕</button><button class="vb" id="vp" aria-label="Previous photo">‹</button><button class="vb" id="vn" aria-label="Next photo">›</button>
+<div class="stage" id="stage"><figure class="vc" id="vc"><i class="tp l"></i><i class="tp r"></i><svg class="bw"><use href="#bow"/></svg><img id="vimg" alt="" draggable="false"><figcaption class="pc" id="vcap"></figcaption><span class="dec l" aria-hidden="true">🎀</span><span class="dec r" aria-hidden="true">♥</span></figure><div id="cnt" aria-live="polite"></div></div>
+<div id="toast"></div></div>
+
+<script>
+/* ========= EDIT ME ========= */
+var NAME="ABIHAAWWWWW";
+var PASSCODE="1128";              // your 4-digit passcode
+/* Keep this HTML file in the SAME folder as the "photos" and "audio" folders. Use / slashes only. */
+/* PATH SETTINGS:
+   Put this HTML file beside the "abiha_website_v2" folder.
+   Inside that folder, keep a "photos" folder and your music file.
+   The helper also converts Windows backslashes to web-safe forward slashes.
+*/
+var MUSIC_SRC="abiha_website_v2/leberch-romantic-584475.mp3";
+var PORTRAIT_SRC=""; // Optional: "abiha_website_v2/photos/portrait.jpg"
+
+/* Exact photo filenames. Change these if your actual filenames differ. */
+var PHOTO_FILES=[
+"abiha15.jpeg",  
+"first.jpeg",
+  "abiha-02.jpg",
+  "abiha-01.jpg",
+  "sec.jpeg",
+  "third.jpeg",
+  "fourth.jpeg",
+  "fifth.jpeg",
+  "sixth.jpeg",
+  "seventh.jpeg",
+  "eight.jpeg",
+  "ninth.jpeg",
+  "tenth.jpeg",
+  "eleventh.jpeg",
+  "twelve.jpeg",
+  "thirteen.jpeg",
+  "fourteen.jpeg",
+  "fifteen.jpeg"
+];
+
+function makeAssetPath(path){
+  return path.replace(/\\\\/g,"/")
+    .split("/")
+    .map(function(part){ return encodeURIComponent(part); })
+    .join("/");
+}
+var PHOTO_SRC=PHOTO_FILES.map(function(file){
+  return makeAssetPath("abiha_website_v2/photos/" + file);
+});
+MUSIC_SRC=makeAssetPath(MUSIC_SRC);
+if(PORTRAIT_SRC) PORTRAIT_SRC=makeAssetPath(PORTRAIT_SRC);
+var CAPS=["The day everything started ♥","That smile, though","A coolest one","Sunshine and you","Feels like bollywood star","The sky was showing off","Beautifil Moon","Laughing till it hurt","A little moment I keep","You, being you","A loving Smile","Shia Baddie","The cutest chaos","Shia Baddie 10/Infinity","Forever kind of day","A whole moon","Pocket full of memories","Still my favourite view","Cake and giggles","Many more to come"];
+var NOTES=[["That smile","Your smile can fix a whole bad day, And in your smile, I see something more beautiful than the stars."],["Your eyes","The world is full of beautiful things, but none of them compare to the light in your eyes. Your eyes are the sweetest story I have ever read."],["Our journey","Thank you for being my safe place. Our journey hasn't been a smooth road, but the best part of my life is that you never let go of my hand. Through every high and low, your presence has been my only constant."],["Your kindness","You saw my broken pieces and, instead of walking away, you held me tightly until I felt whole again.."],["Your hairs","I could spend a lifetime lost in the gentle waves of your hair.I could get lost in the scent of your hair forever; it’s the sweetest poetry without words."],["Why you matter","You matter to me because you are my entire world. I don't just love you with all my heart; I respect you deeply for the person you are, and above everything else, you are my absolute best friend."],["My wishes for you","If a day comes where I can no longer hold your hand, I want you to have the most beautiful life. I pray you find a life partner who loves you exactly the way you deserve, and a warm, happy family to call your own."]];
+/* POETRY: add as many poems as you like. Leave a language as "" to hide it. */
+var POEMS=[
+{title:"Poetry",
+
+ur:"5-July\nSiyaah rang main kuch aisi lgti ho,\njesy chand ny siyah chadder urh li ho \ntumhare pur noor chehre par ye khubsurat sa, hijaab\ntum pari khany ki koi pari lgti ho\ntum itni kamil ho ky lagta hai,\nkhuda ny tumhein fursat sy banaya ho\nkiya kaho tareef main tumse aur us rab sy,\nbas ik sawal hai tum mujhse itni dur kio ho",
+
+
+rm:"4-June\nzalim is tarah tum mukuraya nhi kro,\njaan jati hai hamari tum pass sy jaya nhi kro\n ye jo hain tumhare ghanny gesu,\ninko tum bandha nhi kro\ntumhari ankhon main dikhta hai sara jahan mujhe,\nin ankhon ko mujhpe sy hataya nhi kro\nye tumhara nazrein chura ky muskurana,\nabiha itni piyaari nahi bana kro\nkio chupa rakha hai chehra tumne,\ntum apny deedar sy hamain mehroom kiya na kro",
+
+
+en:"9-Muharram\nhassen sy haseen tar hoonge chehre,\nMgr tumhare illawah kisi ka nhi bahta\ndil lgane ky liye aur bhi hain duniya main,\nMgr tumhare illawah kisi aur par nhi jata\ntumhare meri taraf tirchi nigahon sy dekhna,\nhaye main kush naseeb is tarah tumhara dekhna dekha nhi jata\nwo mur ky plat kar ana tumhara,\nMgr sitam hai ky tumhare pass main aa nhi pata\nzamana hai hamare beech pura,\nwarna btata main ky tumhare bina raha nhi jata\nagr maloom hota ky mera waha rukna munasib nhi tw,\nkhuda ki qasm main kabhi waha nhi ata"},
+
+
+
+{title:"",
+
+ur:"tum jaha kaho jab kaho hum wahi ruk jayengy,\naaj nhi tww kal hum tujhse bichar jaingy\nkon ayega mujhe phir gally lagane,\njab wo hamsafar kisi aur ky hojaingy\nphir tw hijr ki shamain ta-hayaat rahengi,\nbin tumhare hi ham is duniya sy rukhsat hojaingy\nkrke ghar walo ky pure sapne,\nphir hum bhi is duniya sy chaly jaingy",
+
+
+rm:"ye haseen-o-jameel ankhein tumhari,\nye zulfon sy chupa chehra tumhara\nyun raah par chalte chalte palat kr dekhna tumhara,\nye angusht sy apni zulfon ko sawarna tumhara\nmera tumhari nigah main ana aur,\nwo halka sa muskurana thora sharmana tumhara\npass sy guzru tw tumhari kushbhu ka sanson main bas jana,\nkis mitti sy banaya hai us rab ny badan tumhara\nmera mehfil main zikr hoty hi,\nyun achanak mujhe dhundhna tumhara\naur tumhare in sab ada-o-andaz par,\ntum par dil har bethna hamara\ntumhare chehre ki kashish aur ye ghany gesu,\nin par fida hojana hamara\ntumhari ankhon ky chand lamhat ky deedar ki khatir,\nsab kuch luta dena hamara\naur tumhare honton ki surkhi dekh kr,\ngulab ka mazaak urana hamara\ntumhari kushbhu ki mehak ko halka sa mehsoos karna,\naur pura din usmeinn khoo jana hamara\nkadam tum jaha jaha rakho,\nwaha waha ki mitti ko mubarak baad dena hamara\njinhein tumhara deedar ROOZ naseeb hota hai,\nhar duaon main un jeso ki qismat mangna hamara\nkai ashiq hain tumhari is jahan main,\nhayee wo un sab main sirf mujhe mur kar dekhna tumhara\nmgr akhir main andheri raat main ye afsoos karna ky,\nkaha tum Syeda sy jaur hamara",
+
+
+en:"maine kai baar tumhein kuch kehna chaha,\nmgr us baat ko bhool jana hi behtar samjha\ntum khuub-ruu aur main aam shaql ka shaqs,\nhum kaha sath main achy lgty ye baat main der sy samjha\ntum aal-e-muhammad aur main nabi ka ummati,\nham kesy ik hosakty thy ye main kio nhi samjha\ntum syed ho tumhara maqaam uncha hai,\nhum tw adna ummati hain ye baat main der sy samjha\ndaulat-e-husn tumhare pas be-shummar hai,\nmain tw is ki zakat ka bhi haqdar nhi ye baat main der sy samjha"},
+
+
+{title:"",
+
+ur:"tum koi chand nhi ho,\nfalak sy utra howa koi sitara bhi nhi ho\nbalke tum wo ho ky jiske liye ik alg duniya banai jaygi,\naur tum bhi ye sunlo tum koi aam insan nhi ho",
+
+rm:"tanhai main hum jaam pee ky jee gaye,\nrudaad-e-muhabbat yaad karke jee gaye\ngham-e-afsurdagi tw hamain bhot thi Mgr,\napny bhale dino ko yaad karke jee gaye\nlahuu behta raha kalai sy meri,\nlahuu main wafa dekh kar jee gaye\nhamein muhabbat ki tishnaggi thi Mgr,\ntanz o tishna sunke hum jee gaye\nbin ik duje ky hamein tw jeena hi nahi tha,\nkhair ik dosre ko bhula kar hum jee gaye",
+
+en:"Kis liye tum mujhse khafa ho,\n bata do wjaha na jane phir kab rabta ho\n tumhari udaasi sy farq parta hai mujhe,\nkoshih krta hon ky ab tum mujhse khafa na ho"},
+
+
+{title:"",
+
+ur:"mujhe aagy barha ky wo khud peechy rehna chahta tha,\nmtlb khasaary par bhi khasara karna chahta tha",
+
+rm:"tumhari aankhein meri rooh ka sukoon hain,\ntumhari muskaan meri zindagi ka noor hai\n tumhari khushi meri khushi hai,\ntumhara dukh mera dukh hai\n tumhare saath bitaya har pal meri zindagi ka sabse khoobsurat hissa hai,\ntumhara pyaar meri zindagi ka sabse bada tohfa hai\n main hamesha tumhare saath rahunga,\n tumhe hamesha pyaar karunga aur tumhari hifazat karunga\n tum meri zindagi ka sabse khoobsurat hissa ho,\ntumse dur jake main apni zindagi ka sabse bara ghum mehsoos krunga",
+
+en:"Tum Haqiqat nahi ho hasrat ho\n Jo mille Khuwab main wo daulat ho\n Main tumhare hi dam sy zinda hon,\n mar hi jaun jo tumse fursat ho\n tum ho khushbu ky khuwab ki khushbu,\n aur utni hi be-muravat ho\n kis tarah chor du tumhein jana,\n tum meri zindagi ki adat ho\n kis liye dekhti ho aina,\n tum tw khudse bhi khubsurat ho\n dastaan khatam hone wali hai,\n tum meri akhri muhabbat ho"
+},
+
+{title:"",
+
+ur:"teri yaad main guzari hain ratein kai,\n Hijr ki raton main vasl ki justujo ki\n har shaam uthti tere aane ki umeed,\n raat dhalte hi ye umeed bhi chali gaye\n aaj hoi thi darwaze pr dastak,\n wo dastak bhi tanhayi ny di",
+
+rm:"hawa bhi guzre chuu kr,\n tw lagta hai ky tum ho\n siyaah raat ka wo pura chand,\n hawn yaqeenan tum wo ho\n chaman main khilta howa gulaab,\n kabhi lagta hai us gulaab main tum ho\n maikhane main rkha howa jaam,\n us jaam ky har ghunt main lagta hai tum ho\n main jaha jaha jao waha waha tumhein pataa hon,\ yaani sara jahaan hi tum ho",
+
+en:"tumhare sath bitaya howa har pal khubsurat lagta hai,\n ky bin tumhare har pal adhura lagta hai\n kaha sy lao alfaaz tumhari tareef ky liye,\n mujhe tw har lafz hi pheeka lagta hai\n hazaaron batein krne ky baaad bhi,\n kuch an-kaha sa lagta hai\n ishq hai tumse yani tumse hi hai ishq,\n tumse duur rehna khud ky liye saza lagta hai\n kis qadr paak ho tum,\n ba-wazu ho ke bhi chuute howe dar lagta hai"}
+
+
+
+];
+var LETTER="Dear Abiha,\n\nHappy Birthday to the most beautiful person in my world.\nEven if I used every word in the dictionary, I could never fully define how truly breathtaking you are, both inside and out.\n On this special day, my biggest wish is for you to live a long, healthy, and incredibly happy life\nand I selfishly hope that every single one of those years is spent right by my side.\nI need you to always remember that no matter where life takes us, or how chaotic the world gets,\n I am always here for you. You are, and will always be, the number one priority in my life.\n You are my last love—the final destination my heart ever wanted to find.I know I can be difficult sometimes.\n I know I irritate you, drive you crazy, and make far too many mistakes.\n I am so far from perfect, which is why I want to say the biggest thank you from the bottom of my heart.\n Thank you for your endless kindness, for wiping my tears when I feel low, and for never letting go of my hand through all the ups and downs.\n Thank you for not leaving me, even when I made it hard to stay.\n\nI love you more than you will ever truly know. Happy Birthday, my best friend, my love, and my everything.♡";
+/* ============================ */
+var $=function(i){return document.getElementById(i)},reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var COL=[["#ffd8bd","#f3a0b6"],["#fff0d9","#ffb8c8"],["#ffc9d6","#ffe2c4"],["#ffe5cf","#f7a8a0"],["#ffd0dc","#fbd9b5"],["#fde2c8","#f4b0c4"]],ICO=["♥","✿","★","☀","❀","♪"];
+function svgU(s){return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(s)}
+function mk(i){var c=COL[i%6];return svgU('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient></defs><rect width="400" height="500" fill="url(#g)"/><circle cx="'+(90+i*53%220)+'" cy="'+(90+i*37%90)+'" r="46" fill="#fff" opacity=".35"/><text x="200" y="300" font-size="170" text-anchor="middle" fill="#fff" opacity=".85">'+ICO[i%6]+'</text><text x="200" y="440" font-size="30" text-anchor="middle" fill="#4b2a1b" opacity=".55" font-family="Georgia,serif" font-style="italic">your photo '+String(i+1).padStart(2,"0")+'</text></svg>')}
+var AV=svgU('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#ffd8bd"/><path d="M40 200q4-50 60-50t60 50z" fill="#f3a0b6"/><circle cx="100" cy="98" r="52" fill="#4b2a1b"/><circle cx="100" cy="106" r="42" fill="#ffe3cf"/><path d="M58 96q10-34 42-34t42 34q-22-16-42-16T58 96z" fill="#4b2a1b"/><circle cx="84" cy="108" r="5" fill="#4b2a1b"/><circle cx="116" cy="108" r="5" fill="#4b2a1b"/><circle cx="74" cy="122" r="7" fill="#ffb3c6" opacity=".7"/><circle cx="126" cy="122" r="7" fill="#ffb3c6" opacity=".7"/><path d="M88 126q12 11 24 0" fill="none" stroke="#4b2a1b" stroke-width="3.5" stroke-linecap="round"/></svg>');
+var N=PHOTO_SRC.length||20;
+function fb(img){img.addEventListener("error",function(){if(img.dataset.f===undefined){$("wt").textContent="Photo not found: "+decodeURIComponent((img.getAttribute("src")||"").slice(0,90))+" — keep this HTML file next to the photos folder, or pick your photos here:";$("warn").classList.add("on")}var i=+img.dataset.i;if(img.dataset.f!==String(i)){img.dataset.f=String(i);img.src=mk(i)}})}
+var PH=[];for(var i=0;i<N;i++)PH.push({src:PHOTO_SRC[i]||mk(i),cap:CAPS[i]||""});
+$("pimg").src=PORTRAIT_SRC||AV;$("hh").textContent="HAPPY BIRTHDAY, "+NAME+"!";$("fh").textContent="MADE WITH A LITTLE EXTRA LOVE FOR YOU "+NAME+" ♡";
+/* confetti */
+var cv=$("cf"),cx=cv.getContext("2d"),parts=[],raf=0,DPR=Math.min(devicePixelRatio||1,2),CC=["#f3a0b6","#ffc9d6","#ffd8bd","#fffaf0","#8a5a45","#ff8fab"];
+function rs(){cv.width=innerWidth*DPR;cv.height=innerHeight*DPR;cv.style.width=innerWidth+"px";cv.style.height=innerHeight+"px"}rs();addEventListener("resize",rs);
+function add(x,y,vx,vy){parts.push({x:x,y:y,vx:vx,vy:vy,s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:CC[Math.random()*CC.length|0],round:Math.random()<.3})}
+function loop(){cx.setTransform(DPR,0,0,DPR,0,0);cx.clearRect(0,0,innerWidth,innerHeight);
+parts=parts.filter(function(p){p.vy+=.22;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;if(p.y>innerHeight+20)return false;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;if(p.round){cx.beginPath();cx.arc(0,0,p.s/2,0,7);cx.fill()}else cx.fillRect(-p.s/2,-p.s/3,p.s,p.s*.6);cx.restore();return true});
+raf=parts.length?requestAnimationFrame(loop):0}
+function go_(){if(!raf)raf=requestAnimationFrame(loop)}
+function burst(x,y,n){if(reduce)return;for(var i=0;i<n;i++){var a=Math.random()*6.28,s=4+Math.random()*9;add(x,y,Math.cos(a)*s,Math.sin(a)*s-5)}go_()}
+function rain(n){if(reduce)return;for(var i=0;i<n;i++)add(Math.random()*innerWidth,-10-Math.random()*60,(Math.random()-.5)*3,Math.random()*2);go_()}
+function mid(){burst(innerWidth/2,innerHeight*.45,90)}
+/* floating hearts */
+var HE=["♥","💗","🎀","💖","♡"];
+function spawn(layer,spark){var h=document.createElement("span");h.className="fl";h.textContent=HE[Math.random()*HE.length|0];h.style.left=Math.random()*96+"%";h.style.fontSize=14+Math.random()*18+"px";h.style.color="#f3a0b6";h.style.setProperty("--dx",(Math.random()-.5)*80+"px");h.style.setProperty("--rot",(Math.random()-.5)*60+"deg");h.style.animationDuration=6+Math.random()*5+"s";h.addEventListener("animationend",function(){h.remove()});layer.appendChild(h);
+if(spark&&Math.random()<.8){var s=document.createElement("span");s.className="sp";s.textContent="✦";s.style.left=4+Math.random()*92+"%";s.style.top=8+Math.random()*80+"%";s.style.fontSize=10+Math.random()*14+"px";s.addEventListener("animationend",function(){s.remove()});layer.appendChild(s)}}
+var bg=$("bg");if(!reduce)setInterval(function(){if(!document.hidden&&bg.children.length<16)spawn(bg,true)},1000);
+/* swap animation (slide out, change, slide in) */
+function swap(el,d,fn,x0){x0=x0||0;if(reduce||!el.animate){fn();return Promise.resolve()}
+return el.animate([{transform:"translateX("+x0+"px) rotate("+x0/25+"deg)",opacity:1},{transform:"translateX("+-d*90+"px) rotate("+-d*6+"deg)",opacity:0}],{duration:190,easing:"ease-in"}).finished.then(function(){fn();el.style.transform="";return el.animate([{transform:"translateX("+d*90+"px) rotate("+d*6+"deg)",opacity:0},{transform:"none",opacity:1}],{duration:280,easing:"cubic-bezier(.2,.9,.3,1)"}).finished})}
+/* screens */
+function show(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("on")});var e=$(id);if(e)e.classList.add("on")}
+var pins=[].slice.call(document.querySelectorAll("#pin input"));
+pins.forEach(function(p,i){p.addEventListener("input",function(){p.value=p.value.replace(/\D/g,"").slice(-1);if(p.value&&i<3)pins[i+1].focus()});
+p.addEventListener("keydown",function(e){if(e.key==="Backspace"&&!p.value&&i>0){pins[i-1].focus();pins[i-1].value=""}else if(e.key==="Enter")tryUnlock()});
+p.addEventListener("paste",function(e){var t=((e.clipboardData&&e.clipboardData.getData("text"))||"").replace(/\D/g,"").slice(0,4);if(t){e.preventDefault();t.split("").forEach(function(c,k){pins[k].value=c});pins[Math.min(t.length,3)].focus()}})});
+function shake(){var b=$("pin");b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake")}
+function tryUnlock(){var c=pins.map(function(p){return p.value}).join(""),m=$("lmsg");
+if(c.length<4){m.textContent="Fill all four boxes ♡";shake();return}
+if(c===PASSCODE){m.textContent="";$("lockico").classList.add("open");burst(innerWidth/2,innerHeight*.4,60);setTimeout(function(){show("gift")},900)}
+else{m.textContent="Not quite… try again ♡";shake();pins.forEach(function(p){p.value=""});pins[0].focus()}}
+$("unlock").onclick=tryUnlock;
+$("openGift").onclick=function(){$("gb").classList.add("open");mid();setTimeout(function(){show("portrait");mid()},1200)};
+$("celebrate").onclick=function(){show("none");$("site").hidden=false;document.body.classList.remove("lock");scrollTo(0,0);mid();watch()};
+/* slideshow */
+var SL=N,si=0,st=0,sb=false,dots=$("dots");
+for(var d=0;d<SL;d++)(function(d){var b=document.createElement("button");b.className="dot";b.setAttribute("aria-label","Slide "+(d+1));b.onclick=function(){sGo(d>si?1:-1,d);rst()};dots.appendChild(b)})(d);
+function fillS(i){$("simg").dataset.i=i;$("simg").src=PH[i].src;$("simg").alt=PH[i].cap;$("scap").textContent=PH[i].cap;[].forEach.call(dots.children,function(b,k){b.classList.toggle("on",k===i)})}
+function sGo(dir,to){if(sb)return;sb=true;var n=to!=null?to:(si+dir+SL)%SL;if(n===si){sb=false;return}swap($("spol"),dir,function(){si=n;fillS(n)}).then(function(){sb=false},function(){sb=false})}
+function rst(){clearInterval(st);st=setInterval(function(){if(!document.hidden&&!$("viewer").classList.contains("on"))sGo(1)},4500)}
+$("sn").onclick=function(){sGo(1);rst()};$("sp").onclick=function(){sGo(-1);rst()};fillS(0);rst();
+/* gallery */
+var gal=$("gal"),thumbs=[],RT=["4/5","1/1","3/4","4/5"],STK=["🎀","♥","✿","✦","🌸"];
+function buildGal(){gal.innerHTML="";thumbs=[];PH.forEach(function(p,i){var b=document.createElement("button"),w=i%7===0;b.className="tile rv"+(w?" w":"");b.style.setProperty("--r",(i*7%11-5)*.8+"deg");b.style.setProperty("--d",(i%4)*.08+"s");b.setAttribute("aria-label","Open photo "+(i+1)+": "+p.cap);
+b.innerHTML='<i class="tp"></i><i class="stk">'+STK[i%5]+'</i><img alt="" loading="lazy" style="aspect-ratio:'+(w?"5/4":RT[i%4])+'" src="'+p.src+'"><span class="c"></span>';b.lastChild.textContent=p.cap;b.children[2].dataset.i=i;fb(b.children[2]);b.onclick=function(){openAt(i,b)};gal.appendChild(b);thumbs.push(b)});}buildGal();
+/* notes & poems & letter */
+var BGS=["var(--pink2)","var(--peach)","var(--cream)"],IC=["😊","🌷","🤝","🧸","📸","💞","🌟"];
+NOTES.forEach(function(n,i){var c=document.createElement("article");c.className="note rv";c.style.background=BGS[i%3];c.style.setProperty("--r",(i%2?1.2:-1.2)+"deg");c.style.setProperty("--d",(i%2)*.1+"s");c.innerHTML='<span class="e"></span><h3></h3><p></p>';c.children[0].textContent=IC[i%7];c.children[1].textContent=n[0];c.children[2].textContent=n[1];$("notes").appendChild(c)});
+POEMS.forEach(function(P){var set=document.createElement("div");set.className="pset rv";var t=document.createElement("div");t.className="ptitle";t.textContent=P.title||"";set.appendChild(t);var row=document.createElement("div");row.className="poems";
+[["ur","اردو",P.ur],["rm","Roman Urdu",P.rm],["en","English",P.en]].forEach(function(p,k){if(!p[2])return;var c=document.createElement("article");c.className="poem";c.lang=p[0]==="ur"?"ur":"en";if(p[0]==="ur")c.dir="rtl";c.style.setProperty("--d",k*.7+"s");c.innerHTML="<h3></h3><p></p>";c.children[0].textContent=p[1];c.children[1].textContent=p[2];row.appendChild(c)});set.appendChild(row);$("poems").appendChild(set)});
+$("paper").textContent=LETTER;
+$("env").onclick=function(){var e=$("env");if(e.classList.contains("open"))return;e.classList.add("open");e.setAttribute("aria-label","Letter opened");burst(e.getBoundingClientRect().left+e.offsetWidth/2,e.getBoundingClientRect().top,40);setTimeout(function(){$("lt").classList.add("show");setTimeout(function(){$("lt").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"})},500)},750)};
+/* reveal + final confetti */
+function watch(){var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15}):null;
+document.querySelectorAll(".rv").forEach(function(e){io?io.observe(e):e.classList.add("in")});
+if(io){var done=0,fo=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=1;var k=0,t=setInterval(function(){rain(40);if(++k>4)clearInterval(t)},500);mid()}},{threshold:.6});fo.observe($("fin"))}}
+/* music */
+var au=new Audio(),pl=$("pl");au.loop=true;if(MUSIC_SRC){au.src=MUSIC_SRC;$("pt").textContent="our song ♡"}
+var musicBad=false;au.preload="auto";au.addEventListener("error",function(){musicBad=true;$("pt").textContent="add your song"});
+au.addEventListener("play",function(){pl.classList.add("playing");$("pp").textContent="❚❚";$("pp").setAttribute("aria-label","Pause music")});
+au.addEventListener("pause",function(){pl.classList.remove("playing");$("pp").textContent="▶";$("pp").setAttribute("aria-label","Play music")});
+$("pp").onclick=function(){if(!au.src||musicBad){$("pf2").click();return}if(au.paused){var r=au.play();if(r&&r.catch)r.catch(function(){})}else au.pause()};
+$("pt").onclick=function(){$("pf2").click()};
+$("pf2").onchange=function(e){var f=e.target.files[0];if(!f)return;musicBad=false;au.src=URL.createObjectURL(f);$("pt").textContent=f.name.replace(/\.[^.]+$/,"").slice(0,18);var r=au.play();if(r&&r.catch)r.catch(function(){})};
+/* viewer */
+var viewer=$("viewer"),vc=$("vc"),cur=0,isOpen=false,busy=false,opener=null,tm=0;
+function fillV(i){$("vimg").dataset.i=i;$("vimg").src=PH[i].src;$("vimg").alt=PH[i].cap;$("vcap").textContent=PH[i].cap;$("cnt").textContent=String(i+1).padStart(2,"0")+" / "+String(N).padStart(2,"0")}
+function openAt(i,el){cur=i;opener=el;fillV(i);viewer.classList.add("on");viewer.setAttribute("aria-hidden","false");document.body.classList.add("lock");isOpen=true;
+if(!reduce&&vc.animate)vc.animate([{transform:"scale(.82) rotate(-3deg)",opacity:0},{transform:"none",opacity:1}],{duration:420,easing:"cubic-bezier(.2,.9,.3,1.2)"});
+$("vx").focus({preventScroll:true});if(!reduce){for(var k=0;k<5;k++)spawn(viewer,true);tm=setInterval(function(){if(isOpen&&!document.hidden)spawn(viewer,true)},650)}}
+function closeV(){if(!isOpen)return;isOpen=false;clearInterval(tm);viewer.classList.remove("on");viewer.setAttribute("aria-hidden","true");document.body.classList.remove("lock");viewer.querySelectorAll(".fl,.sp").forEach(function(n){n.remove()});
+var t=(opener&&opener.classList.contains("tile"))?thumbs[cur]:opener;if(t){t.scrollIntoView({block:"nearest"});t.focus({preventScroll:true})}}
+function vGo(d,x0){if(busy)return;busy=true;var n=(cur+d+N)%N,w=(d>0&&n===0)||(d<0&&n===N-1),t=$("toast");
+if(w){t.textContent=d>0?"back to the very first memory ♥":"that’s the last memory ♥";t.classList.add("on");setTimeout(function(){t.classList.remove("on")},1800)}
+var f=function(){busy=false};swap(vc,d,function(){cur=n;fillV(n)},x0).then(f,f)}
+$("vn").onclick=function(){vGo(1)};$("vp").onclick=function(){vGo(-1)};$("vx").onclick=closeV;$("sopen").onclick=function(){openAt(si,$("sopen"))};
+viewer.addEventListener("click",function(e){if(e.target===viewer||e.target===$("stage"))closeV()});
+document.addEventListener("keydown",function(e){if(!isOpen)return;if(e.key==="ArrowRight")vGo(1);else if(e.key==="ArrowLeft")vGo(-1);else if(e.key==="Escape")closeV()});
+var sx=0,sy=0,dx=0,drag=false,ax=null;
+viewer.addEventListener("pointerdown",function(e){if(e.target.closest(".vb")||busy)return;drag=true;ax=null;sx=e.clientX;sy=e.clientY;dx=0});
+viewer.addEventListener("pointermove",function(e){if(!drag)return;var mx=e.clientX-sx,my=e.clientY-sy;if(!ax&&(Math.abs(mx)>8||Math.abs(my)>8))ax=Math.abs(mx)>Math.abs(my)?"x":"y";if(ax==="x"){dx=mx;vc.style.transform="translateX("+dx+"px) rotate("+dx/25+"deg)"}});
+function endD(){if(!drag)return;drag=false;if(ax==="x"&&Math.abs(dx)>50)vGo(dx<0?1:-1,dx);else{if(dx&&vc.animate)vc.animate([{transform:vc.style.transform},{transform:"none"}],{duration:200,easing:"ease-out"});vc.style.transform=""}dx=0}
+viewer.addEventListener("pointerup",endD);viewer.addEventListener("pointercancel",endD);
+fb($("simg"));fb($("vimg"));
+$("wx").onclick=function(){$("warn").classList.remove("on")};$("wpick").onclick=function(){$("wf").click()};
+$("wf").onchange=function(e){var fs=[].slice.call(e.target.files).sort(function(a,b){return a.name<b.name?-1:1});if(!fs.length)return;
+PH=fs.map(function(f,i){return{src:URL.createObjectURL(f),cap:CAPS[i]||""}});N=PH.length;SL=N;si=0;
+while(dots.children.length>SL)dots.lastChild.remove();buildGal();document.querySelectorAll(".tile").forEach(function(t){t.classList.add("in")});fillS(0);$("warn").classList.remove("on")};
+pins[0].focus({preventScroll:true});
+</script>
+</body>
+</html>
