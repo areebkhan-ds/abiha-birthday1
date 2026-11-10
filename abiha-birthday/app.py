@@ -53,11 +53,17 @@ if not photo_files:
     st.stop()
 
 # Change the image URL prefix to Streamlit's absolute static URL
-html = html.replace(
-    "abiha_website_v2/photos/",
-    "/app/static/photos/"
-)
+old_path = "abiha_website_v2/photos/"
+new_path = "/app/static/photos/"
 
+if old_path in html:
+    html = html.replace(old_path, new_path)
+    st.success("Photo paths successfully updated!")
+else:
+    st.error("Original photo path was not found in the HTML file.")
+
+st.write("Photo URL example:")
+st.code(new_path + "abiha15.jpeg")
 st.caption(f"Photos detected: {len(photo_files)}")
 
 components.html(
